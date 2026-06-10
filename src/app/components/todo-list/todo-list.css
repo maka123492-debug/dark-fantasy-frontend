@@ -1,0 +1,38 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 14px;
+  padding: 16px;
+
+  border: 1px solid #6e5328;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(60,45,20,.35),
+      rgba(20,20,20,.95)
+    );
+
+  transition: .2s;
+}
+
+li:hover {
+  transform: scale(1.02);
+
+  border-color: #c99a3a;
+
+  box-shadow:
+    0 0 12px rgba(255,200,100,.25);
+}
+
+a {
+  display: block;
+
+  color: #f2dfb3;
+
+  font-size: 18px;
+  letter-spacing: 1px;
+}

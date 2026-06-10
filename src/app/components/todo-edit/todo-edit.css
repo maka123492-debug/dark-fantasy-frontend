@@ -1,0 +1,43 @@
+.container {
+  min-height: 100vh;
+
+  padding: 32px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #161616,
+      #0d0d0d
+    );
+
+  color: #e0c995;
+}
+
+h3 {
+  text-align: center;
+
+  color: #f0d090;
+
+  margin-bottom: 40px;
+
+  text-shadow:
+    0 0 10px rgba(255,200,100,.3);
+}
+
+.manage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  margin-top: 40px;
+}
+
+.delete {
+  color: #d33;
+}

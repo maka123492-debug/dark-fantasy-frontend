@@ -1,26 +1,31 @@
-<mat-sidenav-container>
+<div class="list-container">
 
-  <mat-sidenav
-    mode="side"
-    position="end"
-    [opened]="isOpen()">
+  <div style="text-align:center">
 
-    <router-outlet></router-outlet>
+    <div style="font-size:90px">
+      🔥
+    </div>
 
-  </mat-sidenav>
+    <h2>⚔ FIRE KEEPER QUEST LOG ⚔</h2>
 
-  <mat-sidenav-content>
+    <p>
+      Welcome, Ashen One...
+    </p>
 
-    <h2>{{ title }}</h2>
+    <p>
+      Active Quests: {{ tasks()?.length }}
+    </p>
 
-    <button matButton="tonal" [routerLink]="['/add']">
-      Add
-    </button>
+  </div>
 
-    <p>Tasks count: {{ tasks().length }}</p>
+  <a routerLink="/add">
+    🗡 Accept New Quest
+  </a>
 
-    <app-todo-list [tasks]="tasks()"></app-todo-list>
+  <hr>
 
-  </mat-sidenav-content>
+  <app-todo-list [tasks]="tasks()"></app-todo-list>
 
-</mat-sidenav-container>
+  <router-outlet></router-outlet>
+
+</div>
