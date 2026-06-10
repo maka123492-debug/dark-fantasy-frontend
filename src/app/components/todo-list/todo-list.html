@@ -1,5 +1,9 @@
 <ul>
-  @for (task of tasks(); track $index) {
-    <li>{{ task.title }}</li>
+  @for (task of (tasks() ?? []); track $index) {
+    <li>
+      <a [routerLink]="['/edit', task.id]">
+        {{ task.title }}
+      </a>
+    </li>
   }
 </ul>

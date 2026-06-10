@@ -1,23 +1,14 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Task } from '@app/models/task.model';
-import { TasksService } from '@app/services/tasks.service';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './todo-list.html',
   styleUrl: './todo-list.css'
 })
-export class TodoListComponent implements OnInit {
-
-  private service = inject(TasksService);
-
-  tasks = signal<Task[]>([]);
-
-  ngOnInit(): void {
-    this.service.getTasks().subscribe(tasks => {
-      this.tasks.set(tasks);
-    });
-  }
+export class TodoListComponent {
+  tasks = input<Task[]>();
 }

@@ -1,1 +1,26 @@
-<app-todo-list></app-todo-list>
+<mat-sidenav-container>
+
+  <mat-sidenav
+    mode="side"
+    position="end"
+    [opened]="isOpen()">
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <h2>{{ title }}</h2>
+
+    <button matButton="tonal" [routerLink]="['/add']">
+      Add
+    </button>
+
+    <p>Tasks count: {{ tasks().length }}</p>
+
+    <app-todo-list [tasks]="tasks()"></app-todo-list>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
