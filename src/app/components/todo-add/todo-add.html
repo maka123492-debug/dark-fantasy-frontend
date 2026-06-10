@@ -1,5 +1,30 @@
-<h3>Todo Add Page</h3>
+<h3>Add Todo Item</h3>
 
-<button matButton="outlined" [routerLink]="['/']">
+<div>
+  <label>Title:</label>
+  <input
+    [ngModel]="title()"
+    (ngModelChange)="title.set($event)">
+</div>
+
+<br>
+
+<div>
+  <label>
+    <input
+      type="checkbox"
+      [ngModel]="completed()"
+      (ngModelChange)="completed.set($event)">
+    Completed
+  </label>
+</div>
+
+<br>
+
+<button (click)="save()">
+  Save
+</button>
+
+<button [routerLink]="['/']">
   Cancel
 </button>

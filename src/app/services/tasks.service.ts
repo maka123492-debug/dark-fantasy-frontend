@@ -12,4 +12,30 @@ export class TasksService {
   public getTasks() {
     return this.http.get<Task[]>('http://localhost:8000/tasks');
   }
+
+  public getTask(id: number) {
+    return this.http.get<Task>(
+      `http://localhost:8000/tasks/${id}`
+    );
+  }
+
+  public createTask(task: Task) {
+    return this.http.post<Task>(
+      'http://localhost:8000/tasks',
+      task
+    );
+  }
+
+  public updateTask(task: Task) {
+    return this.http.put<Task>(
+      `http://localhost:8000/tasks/${task.id}`,
+      task
+    );
+  }
+
+  public deleteTask(id: number) {
+    return this.http.delete(
+      `http://localhost:8000/tasks/${id}`
+    );
+  }
 }
